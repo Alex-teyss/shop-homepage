@@ -2,6 +2,7 @@ import React, { Component, useEffect, useState } from 'react'
 
 import logo from './assets/logo.svg';
 import imageHeaderLeftDesktop from './assets/desktop-image-hero-1.jpg';
+import imageHeaderMobile from './assets/mobile-image-hero-1.jpg';
 import iconHamburger from './assets/icon-hamburger.svg';
 import iconClose from './assets/icon-close.svg';
 import iconArrow from './assets/icon-arrow.svg';
@@ -25,10 +26,12 @@ function App() {
       <div className={!isOpen ? "" : "overlay"}></div>
       <div className="header">
         <div className="img-header">
+          <img className="img-header-top-mobile" src={imageHeaderMobile} alt="image-header" />
           {!isOpen ?
             <nav className="navbar">
               <img className="navbar-icon-menu" src={iconHamburger} alt="" onClick={() => toggleButton(isOpen)} />
               <img className="nav-items-brand-logo" src={logo} alt="logo" />
+              <div className="nav-items-blank">Test</div>
             </nav>
             :
             <nav className="navbar-phone">
@@ -37,9 +40,9 @@ function App() {
               <span className="nav-items">shop</span>
               <span className="nav-items">about</span>
               <span className="nav-items">contact</span>
+              <div className="nav-items-blank">Test</div>
             </nav>
           }
-          <div className="nav-items-blank">Test</div>
           <div className="slider-button-mobile">
             <img className="slider-icon-angle" src={iconArrowLeft} alt="go left" />
             <img className="slider-icon-angle" src={iconArrowRight} alt="go right" />
